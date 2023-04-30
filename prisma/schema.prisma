@@ -1,8 +1,17 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-generator client {
+generator auth {
   provider = "prisma-client-js"
+  output = "../../auth-service/node_modules/.prisma/client"
+}
+generator order {
+  provider = "prisma-client-js"
+  output = "../../order-service/node_modules/.prisma/client"
+}
+generator product {
+  provider = "prisma-client-js"
+  output = "../../product-service/node_modules/.prisma/client"
 }
 
 datasource db {
