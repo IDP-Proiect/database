@@ -39,7 +39,6 @@ model Order {
 model Color {
   id          String       @id @unique @default(cuid())
   description String
-  hexCode     String       @unique
   price       Int
   pictureUrl  String?
   quantity Int
@@ -53,13 +52,4 @@ model OrderedColor {
   orderId         Int
   order           Order @relation(fields: [orderId], references: [id])
   color           Color @relation(fields: [colorID], references: [id])
-}
-
-model Todo {
-  id Int @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  title String
-  description String?
-  completed Boolean @default(false)
 }
